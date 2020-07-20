@@ -1,0 +1,38 @@
+<apex:page controller="AddressController">
+
+	<script type="text/javascript">
+        function callActionFunction() {
+            var n = document.getElementById("zipCode").value;
+            afunction(n);
+        }
+    </script>
+
+    <apex:form >
+        <apex:pageBlock title="Informações de Endereço">
+
+        	<apex:pageBlockButtons >
+                <apex:commandButton value="SALVAR" action="{!saveAddress}" reRender="addressBlock"/>
+            </apex:pageBlockButtons>
+
+            <apex:pageBlockSection id="search" columns="1">
+            	<input type="text" id="zipCode" name="zipCode" placeholder="Digite o CEP"/>
+            	<button type="submit" onClick="callActionFunction();return false;">PESQUISAR</button>
+            	<apex:actionFunction name="afunction" action="{!deserialize}">
+            	</apex:actionFunction>
+            </apex:pageBlockSection>
+
+            <apex:pageBlockSection id="addressBlock" columns="1">
+                <apex:outputText value="CEP: {!wrapper.cep}" id="cep" />
+                <apex:outputText value="Logradouro: {!wrapper.logradouro}" id="logradouro" />
+                <apex:outputText value="Complemento: {!wrapper.complemento}" id="complemento" />
+                <apex:outputText value="Bairro: {!wrapper.bairro}" id="bairro" />
+                <apex:outputText value="Localidade: {!wrapper.localidade}" id="localidade" />
+                <apex:outputText value="UF: {!wrapper.uf}" id="uf" />
+                <apex:outputText value="Unidade: {!wrapper.unidade}" id="unidade" />
+                <apex:outputText value="Ibge: {!wrapper.ibge}" id="ibge" />
+                <apex:outputText value="Gia: {!wrapper.gia}" id="gia" />	            
+	        </apex:pageBlockSection>
+
+        </apex:pageBlock> 
+    </apex:form>
+</apex:page>

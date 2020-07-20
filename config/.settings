@@ -1,0 +1,17 @@
+{
+    "projectName": "Salesforce",
+    "username": "wendell.arnald@gmail.com",
+    "id": "5bfd7470-e051-11e8-bddf-99bf0d69320d",
+    "namespace": "",
+    "orgType": "developer",
+    "loginUrl": "https://login.salesforce.com/",
+    "instanceUrl": "https://na78.salesforce.com",
+    "workspace": "/Users/wendellribeiro/Documents/",
+    "subscription": [
+        "ApexClass",
+        "ApexComponent",
+        "ApexPage",
+        "ApexTrigger",
+        "StaticResource"
+    ]
+}
